@@ -17,5 +17,10 @@ namespace Pokemon
             InitializeComponent();
         }
 
+        private void frmPokemon_Load(object sender, EventArgs e)
+        {
+            PokemonNegocio negocio = new PokemonNegocio();
+            dgvPokemons.DataSource = negocio.listar();
+        }
     }
 }
