@@ -21,7 +21,7 @@ namespace Pokemon
             {
                 conexion.ConnectionString = "server = .\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true ";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Numero, Nombre, Descripcion From POKEMONS";
+                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen From POKEMONS";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -30,9 +30,10 @@ namespace Pokemon
                 {
                     Pokemon aux = new Pokemon();      //Acá se crea cada vez que el while da true (cada vez que hay algo para leer)
                                                       //una nueva instancia de Pokemon reutilizando la variable aux
-                    aux.Numero = lector.GetInt32(0);  //donde se guardan todos los datos mencionados con un punto (nombre, descripcion y numero)
+                    aux.Numero = lector.GetInt32(0);  //donde se guardan todos los datos mencionados con un punto (nombre, descripción y número)
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
+                    aux.UrlImagen = (string)lector["UrlImagen"]; //--> este hay que agregarlo como aux
 
                     lista.Add(aux); ;
                 }

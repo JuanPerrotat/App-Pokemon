@@ -12,6 +12,7 @@ namespace Pokemon
 {
     public partial class frmPokemon : Form
     {
+        private List<Pokemon> listaPokemon;
         public frmPokemon()
         {
             InitializeComponent();
@@ -20,7 +21,15 @@ namespace Pokemon
         private void frmPokemon_Load(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            dgvPokemons.DataSource = negocio.listar();
+            listaPokemon = negocio.listar();
+            dgvPokemons.DataSource = listaPokemon;
+            pbPokemon.Load(listaPokemon[0].UrlImagen);
+        }
+
+        private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
+        {
+            Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            pbPokemon.Load(pokemonSeleccionado.UrlImagen);
         }
     }
 }
