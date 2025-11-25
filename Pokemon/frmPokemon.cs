@@ -23,13 +23,25 @@ namespace Pokemon
             PokemonNegocio negocio = new PokemonNegocio();
             listaPokemon = negocio.listar();
             dgvPokemons.DataSource = listaPokemon;
-            pbPokemon.Load(listaPokemon[0].UrlImagen);
+            cargarImagen(listaPokemon[0].UrlImagen);
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
         {
-            Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-            pbPokemon.Load(pokemonSeleccionado.UrlImagen);
+                Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                cargarImagen(pokemonSeleccionado.UrlImagen) ;                    
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbPokemon.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");
+                MessageBox.Show("No se ha encontrando la imagen.", "Adveretencia");
+            }
         }
     }
 }
