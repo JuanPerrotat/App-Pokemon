@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
-namespace Pokemon
+namespace winform_app
 {
     public partial class frmPokemon : Form
     {
@@ -23,6 +25,7 @@ namespace Pokemon
             PokemonNegocio negocio = new PokemonNegocio();
             listaPokemon = negocio.listar();
             dgvPokemons.DataSource = listaPokemon;
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaPokemon[0].UrlImagen);
         }
 
@@ -39,9 +42,13 @@ namespace Pokemon
             }
             catch (Exception ex)
             {
-                pbPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");
-                MessageBox.Show("No se ha encontrando la imagen.", "Adveretencia");
+                pbPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");          
             }
+        }
+
+        private void pbPokemon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+VisualStudioVersion = 17.14.36705.20
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon", "Pokemon\Pokemon.csproj", "{D51EA214-F99D-480C-8182-45868D51965D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winform_app", "Pokemon\winform_app.csproj", "{D51EA214-F99D-480C-8182-45868D51965D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{D1EB1FFE-6880-4C11-BB3C-AE0746F13EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{7EAEDB38-1E0A-48E8-ADF8-98EDE57B2C18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D51EA214-F99D-480C-8182-45868D51965D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D51EA214-F99D-480C-8182-45868D51965D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D51EA214-F99D-480C-8182-45868D51965D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1EB1FFE-6880-4C11-BB3C-AE0746F13EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EB1FFE-6880-4C11-BB3C-AE0746F13EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EB1FFE-6880-4C11-BB3C-AE0746F13EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EB1FFE-6880-4C11-BB3C-AE0746F13EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAEDB38-1E0A-48E8-ADF8-98EDE57B2C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAEDB38-1E0A-48E8-ADF8-98EDE57B2C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAEDB38-1E0A-48E8-ADF8-98EDE57B2C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAEDB38-1E0A-48E8-ADF8-98EDE57B2C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
