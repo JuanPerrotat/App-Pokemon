@@ -43,6 +43,7 @@ namespace winform_app
                 nuevoPokemon.Numero = int.Parse(txtbNumero.Text);
                 nuevoPokemon.Nombre = txtbNombrePokemon.Text;
                 nuevoPokemon.Descripcion = txtbDescripcionPokemon.Text;
+                nuevoPokemon.UrlImagen = txtImagen.Text;
                 nuevoPokemon.Tipo = (Elemento)cboTipo.SelectedItem;
                 nuevoPokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
 
@@ -71,6 +72,22 @@ namespace winform_app
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxPokemon.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");
             }
         }
     }

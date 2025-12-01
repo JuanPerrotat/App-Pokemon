@@ -24,6 +24,17 @@ namespace winform_app
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
+        {
+                Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                cargarImagen(pokemonSeleccionado.UrlImagen) ;                    
+        }
+
+        private void cargar()
+        {
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
@@ -34,15 +45,8 @@ namespace winform_app
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
-        {
-                Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-                cargarImagen(pokemonSeleccionado.UrlImagen) ;                    
         }
         private void cargarImagen(string imagen)
         {
@@ -60,6 +64,7 @@ namespace winform_app
         {
             frmAltaPokemon alta = new frmAltaPokemon();
             alta.ShowDialog();
+            cargar();
         }
     }
 }
