@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using Negocio;
 
 namespace winform_app
 {
     public partial class frmPokemon : Form
     {
         private List<Pokemon> listaPokemon;
+        private List<Elemento> listaElementos;
         public frmPokemon()
         {
             InitializeComponent();
@@ -23,10 +25,18 @@ namespace winform_app
         private void frmPokemon_Load(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            listaPokemon = negocio.listar();
-            dgvPokemons.DataSource = listaPokemon;
-            dgvPokemons.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaPokemon[0].UrlImagen);
+            try
+            {
+                listaPokemon = negocio.listar();
+                dgvPokemons.DataSource = listaPokemon;
+                dgvPokemons.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaPokemon[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
@@ -46,9 +56,10 @@ namespace winform_app
             }
         }
 
-        private void pbPokemon_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            frmAltaPokemon alta = new frmAltaPokemon();
+            alta.ShowDialog();
         }
     }
 }

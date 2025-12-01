@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using dominio;
+using System.Security.Cryptography.X509Certificates;
+using Negocio;
 
 namespace negocio
 {
@@ -19,7 +21,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server = .\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true ";
+                conexion.ConnectionString = "server = .\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as Tipo, D.Descripcion as Debilidad from Pokemons P, Elementos E, Elementos D  where E.Id = P.IdTipo  and D.Id = P.IdDebilidad";
                 comando.Connection = conexion;
@@ -33,7 +35,12 @@ namespace negocio
                     aux.Numero = lector.GetInt32(0);  //donde se guardan todos los datos mencionados con un punto (nombre, descripción y número)
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    aux.UrlImagen = (string)lector["UrlImagen"]; //--> este hay que agregarlo como aux
+
+                   
+                    if (!(lector["UrlImagen"] is DBNull))
+                        aux.UrlImagen = (string)lector["UrlImagen"]; //--> este hay que agregarlo como aux
+
+
                     aux.Tipo = new Elemento(); //--> Constructor del objeto elemento con un tipo
                     aux.Tipo.Descripcion = (string)lector["Tipo"];
                     aux.Debilidad = new Elemento();//--> Constructor del objeto elemento con una debilidad
@@ -45,11 +52,30 @@ namespace negocio
                 return lista;
             }
             catch (Exception ex)
-            {
+            {                
                 throw ex;
             }
-            finally { conexion.Close(); }
-
+            finally { conexion.Close(); }      
         } 
+        public void agregar (Pokemon nuevo)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+            try
+            {
+                acceso.setearConsulta("insert into POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad) values (" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @IdTipo, @IdDebilidad)");
+                acceso.setearParametro("@IdTipo", nuevo.Tipo.Id);
+                acceso.setearParametro("@IdDebilidad", nuevo.Debilidad);
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
     }
 }
