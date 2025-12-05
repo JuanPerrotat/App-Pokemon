@@ -23,7 +23,7 @@ namespace negocio
             {
                 conexion.ConnectionString = "server = .\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as Tipo, D.Descripcion as Debilidad from Pokemons P, Elementos E, Elementos D  where E.Id = P.IdTipo  and D.Id = P.IdDebilidad";
+                comando.CommandText = "select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion as Tipo, D.Descripcion as Debilidad, P.IdTipo, P.IdDebilidad, P.Id from Pokemons P, Elementos E, Elementos D  where E.Id = P.IdTipo  and D.Id = P.IdDebilidad\r\n";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -31,7 +31,7 @@ namespace negocio
                 while (lector.Read())
                 {
                     Pokemon aux = new Pokemon();      //Acá se crea cada vez que el while da true (cada vez que hay algo para leer)
-                                                      //una nueva instancia de Pokemon reutilizando la variable aux
+                    aux.Id = (int)lector["Id"];                                  //una nueva instancia de Pokemon reutilizando la variable aux
                     aux.Numero = lector.GetInt32(0);  //donde se guardan todos los datos mencionados con un punto (nombre, descripción y número)
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
@@ -42,8 +42,10 @@ namespace negocio
 
 
                     aux.Tipo = new Elemento(); //--> Constructor del objeto elemento con un tipo
+                    aux.Tipo.Id = (int)lector["IdTipo"];
                     aux.Tipo.Descripcion = (string)lector["Tipo"];
                     aux.Debilidad = new Elemento();//--> Constructor del objeto elemento con una debilidad
+                    aux.Debilidad.Id = (int)lector["IdDebilidad"];
                     aux.Debilidad.Descripcion = (string)lector["Debilidad"];
 
                     lista.Add(aux); ;
@@ -75,6 +77,34 @@ namespace negocio
             finally
             {
                 acceso.cerrarConexion();
+            }
+        }
+        public void modificar(Pokemon poke)
+        {
+            AccesoDatos datos = new AccesoDatos(); 
+            
+            try
+            {
+                datos.setearConsulta("update POKEMONS set Numero = @numero, Nombre = @nombre, Descripcion = @descripcion, UrlImagen = @img, IdTipo = @IdTipo, IdDebilidad = @IdDebilidad where Id = @Id");
+                datos.setearParametro("@numero", poke.Numero);
+                datos.setearParametro("@nombre", poke.Nombre);
+                datos.setearParametro("@descripcion", poke.Descripcion);
+                datos.setearParametro("@img", poke.UrlImagen);
+                datos.setearParametro("@IdTipo", poke.Tipo.Id);
+                datos.setearParametro("@IdDebilidad", poke.Debilidad.Id);
+                datos.setearParametro("Id", poke.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }
