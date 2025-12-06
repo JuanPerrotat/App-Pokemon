@@ -33,6 +33,8 @@
             this.lblPokemons = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminacionFisica = new System.Windows.Forms.Button();
+            this.btnEliminacionLogica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -98,11 +100,35 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnEliminacionFisica
+            // 
+            this.btnEliminacionFisica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminacionFisica.Location = new System.Drawing.Point(301, 507);
+            this.btnEliminacionFisica.Name = "btnEliminacionFisica";
+            this.btnEliminacionFisica.Size = new System.Drawing.Size(97, 34);
+            this.btnEliminacionFisica.TabIndex = 6;
+            this.btnEliminacionFisica.Text = "Eliminar Físico";
+            this.btnEliminacionFisica.UseVisualStyleBackColor = true;
+            this.btnEliminacionFisica.Click += new System.EventHandler(this.btnEliminacionFisica_Click);
+            // 
+            // btnEliminacionLogica
+            // 
+            this.btnEliminacionLogica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(426, 507);
+            this.btnEliminacionLogica.Name = "btnEliminacionLogica";
+            this.btnEliminacionLogica.Size = new System.Drawing.Size(97, 34);
+            this.btnEliminacionLogica.TabIndex = 7;
+            this.btnEliminacionLogica.Text = "Eliminar Lógico";
+            this.btnEliminacionLogica.UseVisualStyleBackColor = true;
+            this.btnEliminacionLogica.Click += new System.EventHandler(this.btnEliminacionLogica_Click);
+            // 
             // frmPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 660);
+            this.Controls.Add(this.btnEliminacionLogica);
+            this.Controls.Add(this.btnEliminacionFisica);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblPokemons);
@@ -128,6 +154,8 @@
         private System.Windows.Forms.Label lblPokemons;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminacionFisica;
+        private System.Windows.Forms.Button btnEliminacionLogica;
     }
 }
 

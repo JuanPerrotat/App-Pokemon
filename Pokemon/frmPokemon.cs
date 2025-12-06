@@ -32,7 +32,6 @@ namespace winform_app
                 Pokemon pokemonSeleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
                 cargarImagen(pokemonSeleccionado.UrlImagen) ;                    
         }
-
         private void cargar()
         {
             PokemonNegocio negocio = new PokemonNegocio();
@@ -60,14 +59,12 @@ namespace winform_app
                 pbPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");          
             }
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaPokemon alta = new frmAltaPokemon();
             alta.ShowDialog();
             cargar();
         }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Pokemon seleccionado;
@@ -75,6 +72,44 @@ namespace winform_app
             frmAltaPokemon modificar = new frmAltaPokemon(seleccionado);
             modificar.ShowDialog();
             cargar();
+        }
+        private void btnEliminacionFisica_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+        private void btnEliminacionLogica_Click(object sender, EventArgs e)
+        {
+            eliminar(true);
+        }
+        private void eliminar (bool logico = false)
+        {
+            PokemonNegocio negocio = new PokemonNegocio();
+            Pokemon seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Estás seguro en proceder la eliminación?", "Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                    
+                    if (logico)
+                    {                   
+                        negocio.eliminarLogico(seleccionado.Id);
+                        MessageBox.Show("El pokemon seleccionado ha sido eliminado correctamente.", "Advertencia");
+                        cargar();
+                    }
+                    else
+                    {
+                        negocio.eliminarFisico(seleccionado.Id);
+                        MessageBox.Show("El pokemon seleccionado ha sido eliminado correctamente.", "Advertencia");
+                        cargar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
