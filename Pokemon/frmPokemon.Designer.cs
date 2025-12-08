@@ -35,6 +35,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminacionFisica = new System.Windows.Forms.Button();
             this.btnEliminacionLogica = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +49,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPokemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPokemons.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPokemons.Location = new System.Drawing.Point(22, 63);
+            this.dgvPokemons.Location = new System.Drawing.Point(18, 137);
             this.dgvPokemons.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPokemons.MultiSelect = false;
             this.dgvPokemons.Name = "dgvPokemons";
@@ -60,7 +63,7 @@
             // pbPokemon
             // 
             this.pbPokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbPokemon.Location = new System.Drawing.Point(651, 63);
+            this.pbPokemon.Location = new System.Drawing.Point(647, 137);
             this.pbPokemon.Margin = new System.Windows.Forms.Padding(2);
             this.pbPokemon.Name = "pbPokemon";
             this.pbPokemon.Size = new System.Drawing.Size(415, 377);
@@ -71,17 +74,18 @@
             // lblPokemons
             // 
             this.lblPokemons.AutoSize = true;
-            this.lblPokemons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPokemons.Location = new System.Drawing.Point(19, 26);
+            this.lblPokemons.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPokemons.Location = new System.Drawing.Point(12, 21);
             this.lblPokemons.Name = "lblPokemons";
-            this.lblPokemons.Size = new System.Drawing.Size(92, 20);
+            this.lblPokemons.Size = new System.Drawing.Size(108, 26);
             this.lblPokemons.TabIndex = 3;
             this.lblPokemons.Text = "Pokemons";
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.Location = new System.Drawing.Point(23, 507);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(25, 570);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(97, 34);
             this.btnAgregar.TabIndex = 4;
@@ -92,7 +96,8 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(163, 507);
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(147, 570);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(97, 34);
             this.btnModificar.TabIndex = 5;
@@ -103,9 +108,10 @@
             // btnEliminacionFisica
             // 
             this.btnEliminacionFisica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminacionFisica.Location = new System.Drawing.Point(301, 507);
+            this.btnEliminacionFisica.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminacionFisica.Location = new System.Drawing.Point(279, 570);
             this.btnEliminacionFisica.Name = "btnEliminacionFisica";
-            this.btnEliminacionFisica.Size = new System.Drawing.Size(97, 34);
+            this.btnEliminacionFisica.Size = new System.Drawing.Size(103, 34);
             this.btnEliminacionFisica.TabIndex = 6;
             this.btnEliminacionFisica.Text = "Eliminar Físico";
             this.btnEliminacionFisica.UseVisualStyleBackColor = true;
@@ -114,19 +120,52 @@
             // btnEliminacionLogica
             // 
             this.btnEliminacionLogica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminacionLogica.Location = new System.Drawing.Point(426, 507);
+            this.btnEliminacionLogica.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(414, 570);
             this.btnEliminacionLogica.Name = "btnEliminacionLogica";
-            this.btnEliminacionLogica.Size = new System.Drawing.Size(97, 34);
+            this.btnEliminacionLogica.Size = new System.Drawing.Size(109, 34);
             this.btnEliminacionLogica.TabIndex = 7;
             this.btnEliminacionLogica.Text = "Eliminar Lógico";
             this.btnEliminacionLogica.UseVisualStyleBackColor = true;
             this.btnEliminacionLogica.Click += new System.EventHandler(this.btnEliminacionLogica_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(14, 97);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(46, 19);
+            this.lblFiltro.TabIndex = 8;
+            this.lblFiltro.Text = "Filtro:";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(66, 97);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(471, 21);
+            this.txtFiltro.TabIndex = 9;
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltro.Location = new System.Drawing.Point(544, 95);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltro.TabIndex = 10;
+            this.btnFiltro.Text = "Buscar";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
             // frmPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 660);
+            this.Controls.Add(this.btnFiltro);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminacionLogica);
             this.Controls.Add(this.btnEliminacionFisica);
             this.Controls.Add(this.btnModificar);
@@ -156,6 +195,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminacionFisica;
         private System.Windows.Forms.Button btnEliminacionLogica;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }
 

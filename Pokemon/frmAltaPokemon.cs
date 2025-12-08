@@ -31,15 +31,11 @@ namespace winform_app
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-            "¿Estás seguro de que querés cancelar?",
-            "Confirmar cancelación",
-             MessageBoxButtons.YesNo);
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés cancelar?", "Confirmar cancelación", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes)
+            if (resultado == DialogResult.Yes)
             {
-                // Acción de cancelar: cerrar formulario o volver atrás
-                this.Close();  // o cerrar un panel, limpiar campos, etc.
+                this.Close();
             }
         }
 
@@ -49,9 +45,7 @@ namespace winform_app
             try
             {
                 if (pokemon == null)
-                {
-                    Pokemon pokemon = new Pokemon();
-                }
+                    pokemon = new Pokemon();
 
                 pokemon.Numero = int.Parse(txtbNumero.Text);
                 pokemon.Nombre = txtbNombrePokemon.Text;
@@ -63,12 +57,12 @@ namespace winform_app
                 if (pokemon.Id != 0)
                 {
                     negocio.modificar(pokemon);
-                    MessageBox.Show("Modificado exitosamente", "Advertencia");
+                    MessageBox.Show("Modificado exitosamente", "Modificado");
                 }
                 else 
                 { 
                     negocio.agregar(pokemon);
-                    MessageBox.Show("Agregado exitosamente", "Advertencia");
+                    MessageBox.Show("Agregado exitosamente", "Agregado");
                 }
 
                 Close();
@@ -91,7 +85,6 @@ namespace winform_app
                 cboTipo.DisplayMember = "Descripcion";
                 cboDebilidad.ValueMember = "Id";
                 cboDebilidad.DisplayMember = "Descripcion";
-
                 cboDebilidad.DataSource = elementoNegocio.listar();
 
 
