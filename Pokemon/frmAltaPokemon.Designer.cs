@@ -43,6 +43,7 @@
             this.txtImagen = new System.Windows.Forms.TextBox();
             this.lblImagen = new System.Windows.Forms.Label();
             this.pbxPokemon = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.lblNumeroPokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumeroPokemon.AutoSize = true;
             this.lblNumeroPokemon.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroPokemon.Location = new System.Drawing.Point(82, 63);
+            this.lblNumeroPokemon.Location = new System.Drawing.Point(38, 60);
             this.lblNumeroPokemon.Name = "lblNumeroPokemon";
             this.lblNumeroPokemon.Size = new System.Drawing.Size(54, 16);
             this.lblNumeroPokemon.TabIndex = 0;
@@ -62,7 +63,7 @@
             this.lblNombrePokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombrePokemon.AutoSize = true;
             this.lblNombrePokemon.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombrePokemon.Location = new System.Drawing.Point(82, 117);
+            this.lblNombrePokemon.Location = new System.Drawing.Point(38, 114);
             this.lblNombrePokemon.Name = "lblNombrePokemon";
             this.lblNombrePokemon.Size = new System.Drawing.Size(54, 16);
             this.lblNombrePokemon.TabIndex = 1;
@@ -73,7 +74,7 @@
             this.lblDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(64, 174);
+            this.lblDescripcion.Location = new System.Drawing.Point(20, 171);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(72, 16);
             this.lblDescripcion.TabIndex = 2;
@@ -83,7 +84,7 @@
             // 
             this.txtbNumero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbNumero.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbNumero.Location = new System.Drawing.Point(142, 60);
+            this.txtbNumero.Location = new System.Drawing.Point(98, 57);
             this.txtbNumero.Name = "txtbNumero";
             this.txtbNumero.Size = new System.Drawing.Size(258, 23);
             this.txtbNumero.TabIndex = 0;
@@ -92,7 +93,7 @@
             // 
             this.txtbNombrePokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbNombrePokemon.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbNombrePokemon.Location = new System.Drawing.Point(142, 114);
+            this.txtbNombrePokemon.Location = new System.Drawing.Point(98, 111);
             this.txtbNombrePokemon.Name = "txtbNombrePokemon";
             this.txtbNombrePokemon.Size = new System.Drawing.Size(258, 23);
             this.txtbNombrePokemon.TabIndex = 1;
@@ -101,7 +102,7 @@
             // 
             this.txtbDescripcionPokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbDescripcionPokemon.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbDescripcionPokemon.Location = new System.Drawing.Point(142, 171);
+            this.txtbDescripcionPokemon.Location = new System.Drawing.Point(98, 168);
             this.txtbDescripcionPokemon.Name = "txtbDescripcionPokemon";
             this.txtbDescripcionPokemon.Size = new System.Drawing.Size(258, 23);
             this.txtbDescripcionPokemon.TabIndex = 2;
@@ -110,7 +111,7 @@
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(142, 413);
+            this.btnAceptar.Location = new System.Drawing.Point(98, 410);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(67, 27);
             this.btnAceptar.TabIndex = 6;
@@ -122,7 +123,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(333, 413);
+            this.btnCancelar.Location = new System.Drawing.Point(289, 410);
             this.btnCancelar.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 27);
@@ -136,7 +137,7 @@
             this.lblTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(102, 283);
+            this.lblTipo.Location = new System.Drawing.Point(58, 280);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(34, 16);
             this.lblTipo.TabIndex = 8;
@@ -147,7 +148,7 @@
             this.lblDebilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDebilidad.AutoSize = true;
             this.lblDebilidad.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebilidad.Location = new System.Drawing.Point(76, 338);
+            this.lblDebilidad.Location = new System.Drawing.Point(32, 335);
             this.lblDebilidad.Name = "lblDebilidad";
             this.lblDebilidad.Size = new System.Drawing.Size(60, 16);
             this.lblDebilidad.TabIndex = 10;
@@ -159,7 +160,7 @@
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(142, 280);
+            this.cboTipo.Location = new System.Drawing.Point(98, 277);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(258, 24);
             this.cboTipo.TabIndex = 4;
@@ -170,7 +171,7 @@
             this.cboDebilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDebilidad.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDebilidad.FormattingEnabled = true;
-            this.cboDebilidad.Location = new System.Drawing.Point(142, 333);
+            this.cboDebilidad.Location = new System.Drawing.Point(98, 330);
             this.cboDebilidad.Name = "cboDebilidad";
             this.cboDebilidad.Size = new System.Drawing.Size(258, 24);
             this.cboDebilidad.TabIndex = 5;
@@ -179,7 +180,7 @@
             // 
             this.txtImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtImagen.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagen.Location = new System.Drawing.Point(142, 218);
+            this.txtImagen.Location = new System.Drawing.Point(98, 215);
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(258, 23);
             this.txtImagen.TabIndex = 3;
@@ -190,7 +191,7 @@
             this.lblImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagen.Location = new System.Drawing.Point(86, 221);
+            this.lblImagen.Location = new System.Drawing.Point(42, 218);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(50, 16);
             this.lblImagen.TabIndex = 13;
@@ -199,18 +200,29 @@
             // pbxPokemon
             // 
             this.pbxPokemon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxPokemon.Location = new System.Drawing.Point(455, 60);
+            this.pbxPokemon.Location = new System.Drawing.Point(408, 57);
             this.pbxPokemon.Name = "pbxPokemon";
-            this.pbxPokemon.Size = new System.Drawing.Size(350, 294);
+            this.pbxPokemon.Size = new System.Drawing.Size(452, 380);
             this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPokemon.TabIndex = 15;
             this.pbxPokemon.TabStop = false;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(363, 214);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(27, 23);
+            this.btnAgregarImagen.TabIndex = 16;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // frmAltaPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 561);
+            this.ClientSize = new System.Drawing.Size(872, 561);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pbxPokemon);
             this.Controls.Add(this.txtImagen);
             this.Controls.Add(this.lblImagen);
@@ -227,7 +239,7 @@
             this.Controls.Add(this.lblNombrePokemon);
             this.Controls.Add(this.lblNumeroPokemon);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(833, 600);
+            this.MinimumSize = new System.Drawing.Size(888, 600);
             this.Name = "frmAltaPokemon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Pokemon";
@@ -255,5 +267,6 @@
         private System.Windows.Forms.TextBox txtImagen;
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.PictureBox pbxPokemon;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }

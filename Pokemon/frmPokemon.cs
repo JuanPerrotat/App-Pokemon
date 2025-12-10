@@ -123,7 +123,20 @@ namespace winform_app
         }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            
+           PokemonNegocio negocio = new PokemonNegocio();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvPokemons.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Por favor, ingresar los datos necesarios para completar la búsqueda", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -150,7 +163,21 @@ namespace winform_app
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Número")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
         }
     }
 }

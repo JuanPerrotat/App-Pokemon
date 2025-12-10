@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,14 @@ using System.Windows.Forms;
 using dominio;
 using negocio;
 using Negocio;
+using System.Configuration;
 
 namespace winform_app
 {
     public partial class frmAltaPokemon : Form
     {
         private Pokemon pokemon = null;
+        private OpenFileDialog archivo = null;
         public frmAltaPokemon()
         {
             InitializeComponent();
@@ -64,7 +67,10 @@ namespace winform_app
                     negocio.agregar(pokemon);
                     MessageBox.Show("Agregado exitosamente", "Agregado");
                 }
+                if(archivo != null && !(txtImagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
 
+                
                 Close();
 
             }
@@ -121,6 +127,17 @@ namespace winform_app
             catch (Exception ex)
             {
                 pbxPokemon.Load("https://fissac.com/wp-content/uploads/2020/11/placeholder.png");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
             }
         }
     }

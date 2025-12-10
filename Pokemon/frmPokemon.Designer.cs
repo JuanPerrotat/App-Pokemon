@@ -139,18 +139,18 @@
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(14, 97);
+            this.lblFiltro.Location = new System.Drawing.Point(14, 99);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(46, 19);
+            this.lblFiltro.Size = new System.Drawing.Size(94, 19);
             this.lblFiltro.TabIndex = 8;
-            this.lblFiltro.Text = "Filtro:";
+            this.lblFiltro.Text = "Filtro rápido:";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(66, 97);
+            this.txtFiltro.Location = new System.Drawing.Point(114, 97);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(471, 21);
+            this.txtFiltro.Size = new System.Drawing.Size(364, 21);
             this.txtFiltro.TabIndex = 9;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
@@ -158,7 +158,7 @@
             // 
             this.btnFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltro.Location = new System.Drawing.Point(866, 599);
+            this.btnFiltro.Location = new System.Drawing.Point(847, 599);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(70, 21);
             this.btnFiltro.TabIndex = 10;
@@ -216,7 +216,6 @@
             this.lblFiltroAvanzado.Size = new System.Drawing.Size(32, 13);
             this.lblFiltroAvanzado.TabIndex = 15;
             this.lblFiltroAvanzado.Text = "Filtro:";
-            this.lblFiltroAvanzado.Click += new System.EventHandler(this.lblFiltroAvanzado_Click);
             // 
             // txtFiltroAvanzado
             // 
