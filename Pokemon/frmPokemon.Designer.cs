@@ -38,6 +38,12 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnFiltro = new System.Windows.Forms.Button();
+            this.lblCampo = new System.Windows.Forms.Label();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.lblFiltroAvanzado = new System.Windows.Forms.Label();
+            this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -85,9 +91,9 @@
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(25, 570);
+            this.btnAgregar.Location = new System.Drawing.Point(18, 536);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(97, 34);
+            this.btnAgregar.Size = new System.Drawing.Size(106, 34);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -97,9 +103,9 @@
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(147, 570);
+            this.btnModificar.Location = new System.Drawing.Point(144, 536);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(97, 34);
+            this.btnModificar.Size = new System.Drawing.Size(106, 34);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -109,9 +115,9 @@
             // 
             this.btnEliminacionFisica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminacionFisica.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminacionFisica.Location = new System.Drawing.Point(279, 570);
+            this.btnEliminacionFisica.Location = new System.Drawing.Point(270, 536);
             this.btnEliminacionFisica.Name = "btnEliminacionFisica";
-            this.btnEliminacionFisica.Size = new System.Drawing.Size(103, 34);
+            this.btnEliminacionFisica.Size = new System.Drawing.Size(106, 34);
             this.btnEliminacionFisica.TabIndex = 6;
             this.btnEliminacionFisica.Text = "Eliminar Físico";
             this.btnEliminacionFisica.UseVisualStyleBackColor = true;
@@ -121,9 +127,9 @@
             // 
             this.btnEliminacionLogica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminacionLogica.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminacionLogica.Location = new System.Drawing.Point(414, 570);
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(402, 536);
             this.btnEliminacionLogica.Name = "btnEliminacionLogica";
-            this.btnEliminacionLogica.Size = new System.Drawing.Size(109, 34);
+            this.btnEliminacionLogica.Size = new System.Drawing.Size(106, 34);
             this.btnEliminacionLogica.TabIndex = 7;
             this.btnEliminacionLogica.Text = "Eliminar Lógico";
             this.btnEliminacionLogica.UseVisualStyleBackColor = true;
@@ -146,23 +152,91 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(471, 21);
             this.txtFiltro.TabIndex = 9;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnFiltro
             // 
+            this.btnFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFiltro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltro.Location = new System.Drawing.Point(544, 95);
+            this.btnFiltro.Location = new System.Drawing.Point(866, 599);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltro.Size = new System.Drawing.Size(70, 21);
             this.btnFiltro.TabIndex = 10;
             this.btnFiltro.Text = "Buscar";
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(15, 602);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(43, 13);
+            this.lblCampo.TabIndex = 11;
+            this.lblCampo.Text = "Campo:";
+            // 
+            // cboCampo
+            // 
+            this.cboCampo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(64, 599);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(212, 21);
+            this.cboCampo.TabIndex = 12;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(290, 602);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(42, 13);
+            this.lblCriterio.TabIndex = 13;
+            this.lblCriterio.Text = "Criterio:";
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(339, 599);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(212, 21);
+            this.cboCriterio.TabIndex = 14;
+            // 
+            // lblFiltroAvanzado
+            // 
+            this.lblFiltroAvanzado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiltroAvanzado.AutoSize = true;
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(565, 602);
+            this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
+            this.lblFiltroAvanzado.Size = new System.Drawing.Size(32, 13);
+            this.lblFiltroAvanzado.TabIndex = 15;
+            this.lblFiltroAvanzado.Text = "Filtro:";
+            this.lblFiltroAvanzado.Click += new System.EventHandler(this.lblFiltroAvanzado_Click);
+            // 
+            // txtFiltroAvanzado
+            // 
+            this.txtFiltroAvanzado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(614, 599);
+            this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(212, 20);
+            this.txtFiltroAvanzado.TabIndex = 16;
             // 
             // frmPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 660);
+            this.Controls.Add(this.txtFiltroAvanzado);
+            this.Controls.Add(this.lblFiltroAvanzado);
+            this.Controls.Add(this.cboCriterio);
+            this.Controls.Add(this.lblCriterio);
+            this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.lblCampo);
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltro);
@@ -198,6 +272,12 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.ComboBox cboCriterio;
+        private System.Windows.Forms.Label lblFiltroAvanzado;
+        private System.Windows.Forms.TextBox txtFiltroAvanzado;
     }
 }
 

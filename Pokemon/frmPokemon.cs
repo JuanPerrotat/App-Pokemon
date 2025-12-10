@@ -25,6 +25,9 @@ namespace winform_app
         private void frmPokemon_Load(object sender, EventArgs e)
         {
             cargar();
+            cboCampo.Items.Add("Número");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripción");
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
@@ -120,19 +123,34 @@ namespace winform_app
         }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
             List<Pokemon> listaFiltrada;
             string filtro = txtFiltro.Text;
 
-            if(filtro != "")
-                listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            if (filtro.Length >= 3)
+                listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
 
             else
                 listaFiltrada = listaPokemon;
-            
+
 
             dgvPokemons.DataSource = null;
             dgvPokemons.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void lblFiltroAvanzado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
