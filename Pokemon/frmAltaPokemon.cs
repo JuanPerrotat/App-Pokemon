@@ -62,22 +62,23 @@ namespace winform_app
                     negocio.modificar(pokemon);
                     MessageBox.Show("Modificado exitosamente", "Modificado");
                 }
-                else 
-                { 
+                else
+                {
                     negocio.agregar(pokemon);
                     MessageBox.Show("Agregado exitosamente", "Agregado");
                 }
                 if(archivo != null && !(txtImagen.Text.ToUpper().Contains("HTTP")))
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
 
+            
                 
                 Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Por favor, revise que todos los datos estén completos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

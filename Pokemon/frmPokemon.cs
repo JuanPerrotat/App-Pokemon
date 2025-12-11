@@ -121,21 +121,66 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccionar un campo para filtrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccionar un criterio para filtrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            if(txtFiltroAvanzado.Text.Length == 0)
+            {
+                MessageBox.Show("Por favor, ingresar un filtro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if(cboCampo.SelectedItem.ToString() == "Número")
+            {
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                    {
+                    MessageBox.Show("Por favor, ingresar solo números para filtrar por número.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return true;
+                    }
+            }
+            return false;
+        }
+
+        private bool soloNumeros (string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter))) 
+                    return false;
+            }
+
+            return true;
+        }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
            PokemonNegocio negocio = new PokemonNegocio();
             try
             {
+                if (validarFiltro())
+                    return;
+                
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
                 dgvPokemons.DataSource = negocio.filtrar(campo, criterio, filtro);
 
-            }
-            catch (Exception)
-            {
+                
 
-                MessageBox.Show("Por favor, ingresar los datos necesarios para completar la búsqueda", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
             }
         }
 
