@@ -92,7 +92,7 @@ namespace negocio
                 datos.setearParametro("@img", poke.UrlImagen);
                 datos.setearParametro("@IdTipo", poke.Tipo.Id);
                 datos.setearParametro("@IdDebilidad", poke.Debilidad.Id);
-                datos.setearParametro("Id", poke.Id);
+                datos.setearParametro("@Id", poke.Id);
 
                 datos.ejecutarAccion();
             }

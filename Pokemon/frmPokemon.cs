@@ -224,5 +224,10 @@ namespace winform_app
                 cboCriterio.Items.Add("Contiene");
             }
         }
+
+        private void pbPokemon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

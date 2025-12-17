@@ -141,5 +141,15 @@ namespace winform_app
                 cargarImagen(archivo.FileName);
             }
         }
+
+        private void pbxPokemon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImagen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
